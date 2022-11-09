@@ -79,7 +79,7 @@ st.image(img, width=600)
 
 global review_text_index
 type = st.sidebar.radio("Quel texte analyser ?", ('Avis dataset', 'Texte libre'))
-with st.sidebar.beta_expander("Prediction des avis du dataset"):
+with st.sidebar.expander("Prediction des avis du dataset"):
 
     review_text = random.choice(features_nmf_df.index.tolist())
     review_id = st.number_input("Numéro d'index", min_value=0, max_value=9999, value=0)
@@ -95,7 +95,7 @@ with st.sidebar.beta_expander("Prediction des avis du dataset"):
         #st.write("Contenu de l'avis: ", review_text)
         st.info("Contenu de l'avis: {}".format(review_text_index))
 
-with st.sidebar.beta_expander("Prediction de nouveaux avis"):
+with st.sidebar.expander("Prediction de nouveaux avis"):
     review_text_free = st.text_area('Entrez un texte')
 
 # Create a button, that when clicked, shows a text
